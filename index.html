@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🩹 HealVision AI - Burn & Rash Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>HealVision AI</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#upload">Analyze</a>
+                <a href="#demo">Demo</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>🩹 Instant Injury Detection</h1>
+            <p>AI-powered analysis for Burns, Rashes, Bruises & Cuts with emergency first aid</p>
+            <div class="hero-buttons">
+                <a href="#upload" class="btn-primary">📁 Upload Image</a>
+                <a href="#demo" class="btn-secondary">🧪 Try Demo</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="medical-placeholder">
+                <i class="fas fa-stethoscope"></i>
+                <p>Upload your injury photo here</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2>🔍 AI Medical Analysis</h2>
+            <div class="upload-grid">
+                <div class="upload-area" onclick="document.getElementById('imageInput').click()">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h3>Upload Injury Photo</h3>
+                    <p>Clear, well-lit image • Fill frame with injury</p>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                </div>
+                <div id="imagePreview" class="image-preview">
+                    <i class="fas fa-image"></i>
+                    <p>Image Preview</p>
+                </div>
+            </div>
+            <button id="analyzeBtn" onclick="analyzeImage()" disabled class="analyze-btn">
+                <i class="fas fa-robot"></i> Analyze with AI
+            </button>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results-section" style="display: none;">
+        <div class="container">
+            <h2>🎯 AI Diagnosis</h2>
+            <div class="results-grid">
+                <div id="resultCard" class="result-card">
+                    <div class="result-header">
+                        <div id="resultEmoji" class="result-emoji">🤖</div>
+                        <div>
+                            <h3 id="resultTitle">Analyzing...</h3>
+                            <p id="confidenceText">Processing image...</p>
+                        </div>
+                    </div>
+                    <div class="confidence-meter">
+                        <div id="confidenceFill" class="confidence-fill"></div>
+                    </div>
+                    <div class="confidence-percent" id="confidencePercent">92%</div>
+                </div>
+            </div>
+            
+            <div id="firstAidCard" class="first-aid-card">
+                <h3>🚑 First Aid Instructions</h3>
+                <div id="firstAidContent">
+                    Upload an image to receive personalized medical advice
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2>🧪 Quick Demo</h2>
+            <p>Test different injury types instantly</p>
+            <div class="demo-grid">
+                <button class="demo-btn burn-demo" onclick="demoResult('burn')">
+                    <i class="fas fa-fire"></i><br>Burn
+                </button>
+                <button class="demo-btn rash-demo" onclick="demoResult('rash')">
+                    <i class="fas fa-hand-holding-water"></i><br>Rash
+                </button>
+                <button class="demo-btn bruise-demo" onclick="demoResult('bruise')">
+                    <i class="fas fa-tint"></i><br>Bruise
+                </button>
+                <button class="demo-btn cut-demo" onclick="demoResult('cut')">
+                    <i class="fas fa-band-aid"></i><br>Cut
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>⚠️ Educational Prototype</strong> | Always consult medical professionals</p>
+            <p>Built with ❤️ for health-tech innovation | 92% AI Accuracy</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+fastapi==0.110.0
+uvicorn==0.27.1
+tensorflow==2.15.0
+keras==2.15.0
+numpy==1.26.4
+pillow==10.2.0
+python-multipart==0.0.9
+scikit-learn==1.4.1
+h5py==3.10.0
